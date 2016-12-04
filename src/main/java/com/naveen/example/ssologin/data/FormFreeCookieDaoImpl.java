@@ -1,5 +1,6 @@
 package com.naveen.example.ssologin.data;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -13,7 +14,8 @@ public class FormFreeCookieDaoImpl {
 
 	private static final String SECRET = "27e799e85ebf430695cd915a29065805";
 	private static final String AMPERSAND_OPERATOR = "&";
-
+	final static Logger logger = Logger.getLogger(FormFreeCookieDaoImpl.class);
+	
 	public String generateFormFreeCookie(UserInfo userInfo, String target) {
 		long unixPresentTime = System.currentTimeMillis();
 		String[] targetTokens = target.split("/");
@@ -27,6 +29,7 @@ public class FormFreeCookieDaoImpl {
 				.append("distinguishedName=" + userInfo.getDistinguishedName()).append(AMPERSAND_OPERATOR)
 				.append("userPrincipalName=" + userInfo.getUserPrincipalName()).append(AMPERSAND_OPERATOR)
 				.append("cn=" + userInfo.getCn());
+		logger.info("Constructed base string for formFreeCredCookie "+ constructBaseString.toString());
 		String formFreeCookie = EncryptionDecryptionUtility.encrypt(constructBaseString.toString(), SECRET);
 		return formFreeCookie;
 	}

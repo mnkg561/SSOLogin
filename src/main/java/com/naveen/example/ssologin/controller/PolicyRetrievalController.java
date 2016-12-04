@@ -1,5 +1,6 @@
 package com.naveen.example.ssologin.controller;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,11 +14,12 @@ import com.naveen.example.ssologin.model.NewPolicy;
 public class PolicyRetrievalController {
 	@Autowired
 	NewPolicyDao newPolicyDaoImpl;
+	final static Logger logger = Logger.getLogger(PolicyRetrievalController.class);
 
 	@SuppressWarnings("null")
 	@RequestMapping(value = "/isProtected", method = RequestMethod.POST, produces = "application/json")
 	public @ResponseBody NewPolicy retrievePolicy(String path) {
-		System.out.println("Path in the request " + path);
+		logger.info("Path in the request " + path);
 
 		NewPolicy policy = newPolicyDaoImpl.retrievePolicy(path);
 

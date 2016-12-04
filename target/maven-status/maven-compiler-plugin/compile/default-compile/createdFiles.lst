@@ -15,6 +15,7 @@ com\naveen\example\ssologin\controller\UnauthorizedController.class
 com\naveen\example\ssologin\data\GooleAccessTokenDaoImpl.class
 com\naveen\example\ssologin\controller\AuthorizationController.class
 com\naveen\example\ssologin\data\NewPolicyDaoImpl.class
+com\naveen\example\ssologin\controller\LogoutController.class
 com\naveen\example\ssologin\model\OAuthToken.class
 com\naveen\example\ssologin\data\NewPolicyDao.class
 com\naveen\example\ssologin\model\SalesforceResponse.class

@@ -1,15 +1,12 @@
 package com.naveen.example.ssologin.data;
 
-import org.apache.http.impl.client.HttpClients;
-import org.json.simple.JSONObject;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.client.HttpComponentsClientHttpRequestFactory;
 import org.springframework.stereotype.Service;
-import org.springframework.util.LinkedMultiValueMap;
-import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import com.naveen.example.ssologin.model.OAuthToken;
@@ -22,6 +19,7 @@ public class SalesforceConnectorDaoImpl implements SalesforceConnectorDao {
 	
 	@Autowired
 	SalesforceResponse salesforceResponse;
+	final static Logger logger = Logger.getLogger(SalesforceConnectorDaoImpl.class);
 /*
 	@Override
 	public boolean sendMessage(int otp) {
@@ -71,11 +69,11 @@ public class SalesforceConnectorDaoImpl implements SalesforceConnectorDao {
 */
 	@Override
 	public boolean sendMessage(int otp){
-		System.out.println(" Sending SMS to user's registered mobile number");
+		logger.info(" Sending SMS to user's registered mobile number");
 		boolean result=false;
 		String smsURL = "http://extws.moneygram.com/simple-sms/service/SalesforceService1607";
 		String mobileNumber = "14802806660";
-		String smsText = "Naveen's SSO App: Your one time password is "+otp;
+		String smsText = "SSO Demo App: Your one time password is "+otp;
 		String xmlInput = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><ns0:SendSimpleSMSNotificationRequest xmlns:ns0=\"http://www.moneygram.com/SalesforceService1607\"><ns0:requestIdentifier>405613e5-3734-4a60-ae03-1c82b9a</ns0:requestIdentifier><ns0:messageAPIKey>MTo3ODow</ns0:messageAPIKey><ns0:NotificationRequest><ns0:sourceSystem>MGO</ns0:sourceSystem><ns0:notificationIdentifier/><ns0:createdDate>2016-11-11T12:37:14.971-06:00</ns0:createdDate><ns0:phoneNumber>"+mobileNumber+"</ns0:phoneNumber><ns0:smsContent><ns0:smsMessage>"+smsText+"</ns0:smsMessage></ns0:smsContent></ns0:NotificationRequest></ns0:SendSimpleSMSNotificationRequest>";
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.TEXT_XML);

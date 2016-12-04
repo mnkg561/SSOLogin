@@ -34,6 +34,8 @@
 										<form:label class="string optional" path="oneTimePassword">Open OTP*</form:label>
 										<form:input path="oneTimePassword" placeholder="oneTimePassword"
 											class="string optional" maxlength="255" size="50" />
+											<form:hidden path="userName"
+									value="${oneTimePassword.userName}" />
 									</div>
 								</div>
 								<div class="simform__actions">

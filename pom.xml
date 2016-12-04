@@ -107,15 +107,9 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-
-			<dependency>
-				<groupId>org.jboss.bom.wfk</groupId>
-				<artifactId>jboss-javaee-6.0-with-tools</artifactId>
-				<version>${version.jboss.bom.wfk}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-
+			<!-- <dependency> <groupId>org.jboss.bom.wfk</groupId> <artifactId>jboss-javaee-6.0-with-tools</artifactId> 
+				<version>${version.jboss.bom.wfk}</version> <type>pom</type> <scope>import</scope> 
+				</dependency> -->
 			<dependency>
 				<groupId>org.jboss.bom.eap</groupId>
 				<artifactId>jboss-javaee-6.0-with-hibernate</artifactId>
@@ -129,35 +123,8 @@
 				<artifactId>standard</artifactId>
 				<version>${version.standard.taglibs}</version>
 			</dependency>
-
-			<dependency>
-				<groupId>commons-logging</groupId>
-				<artifactId>commons-logging</artifactId>
-				<version>${version.commons.logging}</version>
-			</dependency>
-
-			<!-- Add cglib for the MemberDaoTest -->
-			<dependency>
-				<groupId>cglib</groupId>
-				<artifactId>cglib-nodep</artifactId>
-				<version>${version.cglib}</version>
-				<exclusions>
-					<exclusion>
-						<groupId>org.objectweb.asm</groupId>
-						<artifactId>asm</artifactId>
-					</exclusion>
-				</exclusions>
-			</dependency>
-
-
-			<!-- Add H2 dependency for embedded testing database -->
-			<dependency>
-				<groupId>com.h2database</groupId>
-				<artifactId>h2</artifactId>
-				<version>${version.h2db}</version>
-			</dependency>
-
-			<!-- Add JSON dependency, specified in jboss-deployment-structure.xml -->
+			<!-- <dependency> <groupId>commons-logging</groupId> <artifactId>commons-logging</artifactId> 
+				<version>${version.commons.logging}</version> </dependency> -->
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-core</artifactId>
@@ -179,40 +146,6 @@
 	<dependencies>
 		<!-- Import the JPA API using the provided scope It is included in JBoss 
 			EAP 6 -->
-		<dependency>
-			<groupId>org.hibernate.javax.persistence</groupId>
-			<artifactId>hibernate-jpa-2.0-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- JSR-303 (Bean Validation) Implementation -->
-		<!-- Provides portable constraints such as @Email -->
-		<!-- Hibernate Validator is shipped in JBoss EAP 6 -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator</artifactId>
-			<scope>provided</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.slf4j</groupId>
-					<artifactId>slf4j-api</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-entitymanager</artifactId>
-			<scope>provided</scope>
-		</dependency>
-
-		<!-- Annotation processor raises compilation errors whenever constraint 
-			annotations are incorrectly used. -->
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-validator-annotation-processor</artifactId>
-			<scope>provided</scope>
-		</dependency>
 
 		<!-- Bring in the Servlet jars to avoid errors while compiling with jdt. -->
 		<dependency>
@@ -250,11 +183,7 @@
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-core</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>commons-codec</groupId>
-			<artifactId>commons-codec</artifactId>
-			<version>1.9</version>
-		</dependency>
+
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-expression</artifactId>
@@ -299,17 +228,11 @@
 			<groupId>taglibs</groupId>
 			<artifactId>standard</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>commons-logging</groupId>
-			<artifactId>commons-logging</artifactId>
-		</dependency>
-
+		<!-- <dependency> <groupId>commons-logging</groupId> <artifactId>commons-logging</artifactId> 
+			</dependency> <dependency> <groupId>commons-codec</groupId> <artifactId>commons-codec</artifactId> 
+			<version>1.9</version> </dependency> -->
 		<!-- Needed for running tests (you may also use TestNG) -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<scope>test</scope>
-		</dependency>
+
 
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
@@ -328,19 +251,8 @@
 			<version>1.1</version>
 		</dependency>
 
-		<!-- Add cglib for the MemberDaoTest -->
-		<dependency>
-			<groupId>cglib</groupId>
-			<artifactId>cglib-nodep</artifactId>
-			<scope>test</scope>
-		</dependency>
 
 		<!-- Add H2 dependency for embedded testing database -->
-		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<scope>test</scope>
-		</dependency>
 
 		<!-- Add JSON dependency, specified in jboss-deployment-structure.xml -->
 		<dependency>
@@ -352,12 +264,15 @@
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 		</dependency>
-
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-simple</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>servlet-api</artifactId>

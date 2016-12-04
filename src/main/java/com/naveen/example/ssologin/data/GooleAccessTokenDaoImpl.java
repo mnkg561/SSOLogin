@@ -1,5 +1,6 @@
 package com.naveen.example.ssologin.data;
 
+import org.apache.log4j.Logger;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
@@ -10,6 +11,7 @@ import org.springframework.util.MultiValueMap;
 import org.springframework.web.client.RestTemplate;
 
 import com.naveen.example.ssologin.model.GoogleOAuthToken;
+
 @Service
 public class GooleAccessTokenDaoImpl implements GoogleAccessTokenDao {
 
@@ -17,10 +19,11 @@ public class GooleAccessTokenDaoImpl implements GoogleAccessTokenDao {
 	private static final String CLIENTSECRET = "Xj4QCIHz2cx3bQripbLFRm9R";
 	private static final String GRANTTYPE = "authorization_code";
 	private static final String REDIRECTURL = "http://ssologin.naveen.com:8080/SSOLogin/google/redirectUrl";
+	final static Logger logger = Logger.getLogger(GooleAccessTokenDaoImpl.class);
 
 	@Override
 	public GoogleOAuthToken exchangeCodeForAccessToken(String code) {
-		System.out.println("Exchange Authorization Code for Access Token");
+		logger.info("Exchange Authorization Code for Access Token");
 		String endPointURL = "https://www.googleapis.com/oauth2/v4/token";
 		MultiValueMap<String, String> requestObject = new LinkedMultiValueMap<String, String>();
 		requestObject.add("client_id", CLIENTID);

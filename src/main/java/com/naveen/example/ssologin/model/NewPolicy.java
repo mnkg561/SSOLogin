@@ -1,14 +1,12 @@
 package com.naveen.example.ssologin.model;
 
-import javax.validation.constraints.NotNull;
-
 import org.springframework.stereotype.Component;
 
 @Component
 public class NewPolicy {
-	@NotNull
+
 	private String path;
-	@NotNull
+
 	private String contextRoot;
 	
 	public String getContextRoot() {
@@ -17,7 +15,7 @@ public class NewPolicy {
 	public void setContextRoot(String contextRoot) {
 		this.contextRoot = contextRoot;
 	}
-	@NotNull
+	
 	private boolean thisProtected;
 	public boolean getThisProtected() {
 		return thisProtected;

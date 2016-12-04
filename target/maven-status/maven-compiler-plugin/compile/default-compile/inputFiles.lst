@@ -18,6 +18,7 @@ C:\Users\naveen.mogulla\workspace\SSOLogin\src\main\java\com\naveen\example\ssol
 C:\Users\naveen.mogulla\workspace\SSOLogin\src\main\java\com\naveen\example\ssologin\data\AuthorizationDaoImpl.java
 C:\Users\naveen.mogulla\workspace\SSOLogin\src\main\java\com\naveen\example\ssologin\data\GooleAccessTokenDaoImpl.java
 C:\Users\naveen.mogulla\workspace\SSOLogin\src\main\java\com\naveen\example\ssologin\data\FormFreeCookieDaoImpl.java
+C:\Users\naveen.mogulla\workspace\SSOLogin\src\main\java\com\naveen\example\ssologin\controller\LogoutController.java
 C:\Users\naveen.mogulla\workspace\SSOLogin\src\main\java\com\naveen\example\ssologin\controller\MFAOTPController.java
 C:\Users\naveen.mogulla\workspace\SSOLogin\src\main\java\com\naveen\example\ssologin\controller\SSOLoginController.java
 C:\Users\naveen.mogulla\workspace\SSOLogin\src\main\java\com\naveen\example\ssologin\data\GoogleAccessTokenDao.java
