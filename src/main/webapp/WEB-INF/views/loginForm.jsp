@@ -40,7 +40,7 @@
 									<div class="connect__context">
 										<span>Link with <strong>Facebook</strong></span>
 									</div>
-								</a> <a href="#" class="connect googleplus">
+								</a> <a href="https://accounts.google.com/o/oauth2/v2/auth?client_id=349455219287-nsba8isi6qnspmttjalgiet1vvprus0h.apps.googleusercontent.com&response_type=code&scope=openid%20email&redirect_uri=http://ssologin.naveen.com:8080/SSOLogin/google/redirectUrl&state=${userCredentials.target}" class="connect googleplus">
 									<div class="connect__icon">
 										<i class="fa fa-google-plus"></i>
 									</div>

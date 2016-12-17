@@ -41,6 +41,6 @@ public class PolicyCreatorController {
 		Boolean result = newPolicyDaoImpl.createNewPolicy(newPolicy);
 		if (result)
 			logger.info("New Policy has been created successfully");
-		return "createPolicy";
+		return "successPage";
 	}
 }

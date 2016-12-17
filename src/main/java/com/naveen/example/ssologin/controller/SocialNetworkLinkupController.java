@@ -72,6 +72,12 @@ public class SocialNetworkLinkupController {
 			cookie.setMaxAge(300);
 			cookie.setPath("/");
 			resp.addCookie(cookie);
+			
+			Cookie userCookie = new Cookie("userId", googleUserCredentials.getUserId());
+			userCookie.setDomain(".naveen.com");
+			userCookie.setMaxAge(300);
+			userCookie.setPath("/");
+			resp.addCookie(userCookie);
 			logger.info("Redirecting user to target url");
 			return "redirect:" + googleUserCredentials.getDestination();
 		} catch (NullPointerException exc) {

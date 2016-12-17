@@ -118,7 +118,7 @@ public class AuthorizationDaoImpl {
 			logger.info("MFA validation is successful and user is authorized to access target resource");
 			authorizationDecision.setAuthorized(true);
 			authorizationDecision.setMfaEnabled(true);
-		} else {
+		} else if (mfaEnabled && userInfo.getMemberOf().contains(requiredGroups)){
 			logger.info("MFA Enable application");
 			authorizationDecision.setMfaEnabled(true);
 		}

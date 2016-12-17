@@ -20,7 +20,7 @@
 <html>
 
 <head>
-<title>Unauthorized Page</title>
+<title>403 Forbidden Page</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" type="text/css"
 	href="<c:url value="/static/resources/css/screen.css"/>" />
@@ -31,9 +31,9 @@
 		<div class="one">
 			<div class="register">
 
-				<h1>401</h1>
-				<br /> <br /> <br />
-				<h3>Access Denied</h3>
+				<center><h1>403</h1></center>
+				<br /> 
+				<center><h3>Access Denied</h3></center>
 			</div>
 		</div>
 	</div>
